@@ -1,0 +1,33 @@
+.button {
+  display: inline-block;
+  padding: 0 5px;
+  height: 40px;
+
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: none;
+  color: $black;
+  background-color: transparent;
+  background-image: url("../img/background/button-background.jpg");
+  background-position: left center;
+  background-repeat: repeat-x;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    background-color: $acient;
+    background-image: none;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $acient;
+    background-image: none;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}

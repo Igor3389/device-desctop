@@ -1,0 +1,27 @@
+.form {
+  display: block;
+  padding-top: 81px;
+
+  &__section {
+    border: none;
+  }
+
+  &__title {
+    position: relative;
+    @include gilroy(18px, 24px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -12px;
+      width: 201px;
+      height: 2px;
+      background-color: $black;
+    }
+  }
+
+  &__button {
+    width: 201px;
+  }
+}

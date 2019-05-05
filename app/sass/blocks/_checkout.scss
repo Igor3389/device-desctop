@@ -1,0 +1,21 @@
+.checkout {
+  width: 150px;
+  height: 42px;
+  padding: 12px 17px 10px 17px;
+
+  font-size: 17px;
+  line-height: 18px;
+  text-align: center;
+  color: white;
+
+  background-color: $acient-green;
+
+  &:hover, &:focus {
+    background-color: $acient-green-hover;
+  }
+
+  &:active {
+    background-color: $acient-green-active;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

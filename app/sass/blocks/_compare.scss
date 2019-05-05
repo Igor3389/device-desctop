@@ -1,0 +1,17 @@
+.compare {
+  position: relative;
+  padding-left: 27px;
+
+  &__icon {
+    position: absolute;
+    top: 11px;
+    left: 6px;
+  }
+
+  &--footer {
+    & .compare__icon {
+      top: 13px;
+      fill: $acient;
+    }
+  }
+}

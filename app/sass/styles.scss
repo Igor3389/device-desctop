@@ -1,0 +1,62 @@
+@import "normalize";
+@import "variables";
+@import "libs/slick";
+@import "mixins";
+@import "fonts";
+@import "hidden";
+@import "settings";
+@import "blocks/checkbox";
+@import "blocks/radio";
+@import "blocks/button";
+@import "blocks/container";
+@import "blocks/main-header";
+@import "blocks/logo";
+@import "blocks/interactive";
+@import "blocks/login";
+@import "blocks/navigation";
+@import "blocks/cart";
+@import "blocks/catalog";
+@import "blocks/compare";
+@import "blocks/search";
+@import "blocks/main";
+@import "blocks/slider";
+@import "blocks/categories";
+@import "blocks/features";
+@import "blocks/main-page";
+@import "blocks/brands";
+@import "blocks/about";
+@import "blocks/map";
+@import "blocks/modal";
+@import "blocks/contacts";
+@import "blocks/write";
+@import "blocks/inner-page";
+@import "blocks/products";
+@import "blocks/product";
+@import "blocks/sort";
+@import "blocks/range";
+@import "blocks/pages";
+@import "blocks/form";
+@import "blocks/color";
+@import "blocks/bluetooth";
+@import "blocks/main-footer";
+@import "blocks/social";
+
+
+body {
+  @include default;
+  min-width: 320px;
+
+  font-family: 'Opensans', 'Arial', sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: left;
+
+  background-color: $white;
+  color: $black;
+}
+
+
+
+
+

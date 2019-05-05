@@ -1,0 +1,82 @@
+.logout {
+  display: flex;
+  flex-direction: column;
+  width: 298px;
+
+  &__name {
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 12px 47px 11px 47px;
+    @include text(21px, 21px);
+
+    background-color: $white;
+
+    &:hover .logout__icon, &:focus .logout__icon {
+      fill: $user-icon-hover;
+    }
+
+    &:active .logout__icon {
+      fill: $user-icon-color;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 14px;
+    fill: $user-icon-color;
+
+    &--user {
+      left: 12px;
+    }
+
+    &--logout {
+      right: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding-left: 17px;
+    @include text(16px, 18px);
+
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 31px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: -20px;
+
+      width: 4px;
+      height: 4px;
+      background-color: $blue-text;
+      border-radius: 50%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: $blue-text;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: $acient-red;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.inner-page {
+  &__header {
+    padding: 37px 60px 44px;
+  }
+
+  &__title {
+    @include gilroy(47px, 48px);
+    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 33px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: -16px;
+
+      width: 5px;
+      height: 1px;
+      background-color: $black;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 17px;
+      right: -16px;
+      transform: rotate(-45deg);
+    }
+
+    &:last-child::before,
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &__link {
+    opacity: 0.6;
+  }
+
+  &__link[href] {
+    &:hover, &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

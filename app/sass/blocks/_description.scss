@@ -1,0 +1,11 @@
+.description {
+  padding: 65px 0 67px;
+  background-color: $header-background;
+
+  &__title {
+    margin-bottom: 27px;
+    font-weight: 400;
+    @include text(30px, 30px);
+    text-transform: uppercase;
+  }
+}

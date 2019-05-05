@@ -1,0 +1,109 @@
+.servicies {
+  margin-bottom: 78px;
+  padding-top: 65px;
+  padding-bottom: 104px;
+  background-color: $header-background;
+
+  &__title {
+    margin-bottom: 26px;
+    @include text(30px, 30px);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    width: 410px;
+    margin-bottom: 68px;
+  }
+
+  &__list {
+    position: relative;
+    width: 240px;
+
+    @include text(21px, 30px);
+    font-weight: 700;
+
+    &::after {
+      content: '';
+      z-index: 10;
+      position: absolute;
+      top: -40px;
+      right: 0;
+
+      width: 10px;
+      height: 272px;
+      background-repeat: no-repeat;
+      background-image: url('../img/pngIcons/servicies-shadow.png');
+    }
+  }
+
+  &__item {
+    padding: 15px 22px 15px;
+
+    color: white;
+    background-color: $acient-blue;
+    border-top: 1px solid #4e637c;
+
+    &:hover {
+      background-color: $acient-blue-hover;
+    }
+
+    & .servicies__content {
+      display: none;
+    }
+
+    &--active {
+      color: $blue-text;
+      background-color: $white;
+      border: none;
+
+      &:hover {
+        background-color: $white;
+      }
+
+      & .servicies__content {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 240px;
+    width: 730px;
+    height: 325px;
+    padding-left: 80px;
+
+    background-repeat: no-repeat;
+
+    &--delivery {
+      background-image: url('../img/pngIcons/delivery.png');
+      background-position: top 24px right 31px;
+    }
+
+    &--warranty {
+      background-image: url('../img/pngIcons/warranty.png');
+      background-position: top 1px right 30px;
+    }
+
+    &--credit {
+      background-image: url('../img/pngIcons/credit.png');
+      background-position: top 1px right 20px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+    @include text(36px, 36px);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $blue-text;
+  }
+
+  &__subtext {
+    width: 280px;
+    @include text(14px, 24px);
+    color: black;
+  }
+}

@@ -1,0 +1,34 @@
+.field {
+  height: 44px;
+  padding: 13px 14px 15px;
+
+  @include text(14, 24);
+  color: $black-text-color;
+  background-color: $white;
+  border: 1px solid $input-border-color;
+  border-radius: 6px;
+
+  &::placeholder {
+    @include text(14, 24);
+    color: #999999;
+  }
+
+  &:-ms-input-placeholder {
+    @include text(14, 24);
+    color: #999999;
+  }
+
+  &::-ms-input-placeholder {
+    @include text(14, 24);
+    color: #999999;
+  }
+
+  &:hover {
+    border: 2px solid $input-border-hover-color;
+  }
+
+  &:focus {
+    border: 2px solid $input-border-input-color;
+    outline: none;
+  }
+}

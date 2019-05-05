@@ -1,0 +1,61 @@
+.modal {
+  &__overlay {
+    display: none;
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    &.modal-overlay-visually {
+      display: block;
+    }
+  }
+
+  &__map, &__write {
+     display: none;
+   }
+
+  &__popup {
+    position: fixed;
+    z-index: 50;
+    top: 35px;
+    left: 50%;
+    margin-left: -480px;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  &__popup-close {
+    z-index: 1;
+    position: absolute;
+    top: 22px;
+    right: 27px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    background-color: transparent;
+
+    &-icon {
+      fill: rgba(240, 197, 46, 0.5);
+    }
+
+    &:hover .modal__popup-close-icon {
+      cursor: pointer;
+      fill: rgba(240, 197, 46, 1);
+    }
+
+    &:active .modal__popup-close-icon {
+      fill: rgba(240, 197, 46, 0.3);
+    }
+
+    &:active, &:focus {
+      outline: none;
+    }
+
+
+  }
+}

@@ -1,0 +1,58 @@
+.pages {
+  display: flex;
+  @include gilroy(16px, 24px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #ebebeb;
+
+  &__list {
+    display: flex;
+    margin: 0 auto;
+    padding: 24px 5px 22px;
+  }
+
+  &__item {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active .pages__link{
+      color: $black;
+    }
+  }
+
+  &__link {
+    color: rgba(0, 0, 0, 0.3);
+
+    &[href]:hover, &[href]:focus {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &[href]:active {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+
+  &__button {
+    display: block;
+    padding: 24px 5px 22px;
+    width: 125px;
+    height: 70px;
+    text-align: center;
+    background-color: #ebebeb;
+
+    &[href]:hover, &[href]:focus {
+      background-color: #cccccc;
+    }
+
+    &[href]:active {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.pages__button--disabled {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

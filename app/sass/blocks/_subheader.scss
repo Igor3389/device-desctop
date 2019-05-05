@@ -1,0 +1,19 @@
+.subheader {
+  display: flex;
+  padding: 25px 24px 25px 27px;
+
+  background-color: $popular-background;
+
+  &__title {
+    margin-right: auto;
+    margin-top: 5px;
+    @include text(30px, 30px);
+    font-weight: 400;
+    color: $blue-text;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    width: 253px;
+  }
+}

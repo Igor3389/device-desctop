@@ -1,0 +1,76 @@
+header.main-header
+    .container
+        .main-header__wrapper
+            if (mainPage)
+                a.main-header__logo.interactive.logo DEVICE
+            else
+                a.main-header__logo.interactive.logo(href='index.html') DEVICE
+            .main-header__top
+                form.main-header__search.search(action='#', method='post')
+                    input.search__field(type='text', name='searchText', placeholder='Поиск по сайту')
+                    button.search__button(type='submit' aria-label='Кнопка поиска') Найти
+                ul.main-header__login.login
+                    if (logout)
+                        li.login__item
+                            a.interactive.login__link(href='#')
+                                +icon('login__icon', 'user', 13, 12, {role: 'img'})
+                                | Войти
+                    else
+                        li.login__item
+                            a.interactive.login__link(href='#')
+                                +icon('login__icon', 'user', 13, 12, {role: 'img'})
+                                | Валентин Петухов
+                        li.login__item
+                            a.login__link.login__link--logout(href='#') Выйти
+                a.interactive.main-header__compare.compare(href='#')
+                    +icon('compare__icon', 'compare', 10, 10, {role: 'img'})
+                    | Сравнить
+                a.interactive.main-header__cart.cart(href='#')
+                    +icon('cart__icon', 'cart', 12, 12, {role: 'img'})
+                    | Корзина
+            nav.main-header__navigation.navigation
+                ul.navigation__list
+                    li.navigation__item.catalog
+                        span.catalog__title Каталог тоаваров
+                        ul.catalog__list.no-js
+                            li.catalog__item
+                                ul.catalog__sublist
+                                    li.catalog__sublist-item
+                                        a.catalog__sublist-link.interactive(href='#') Виртуальная реальность
+                                    li.catalog__sublist-item
+                                        a.catalog__sublist-link.interactive(href='#') Моноподы для селфи
+                                    li.catalog__sublist-item
+                                        a.catalog__sublist-link.interactive(href='#') Экшн-камеры
+                            li.catalog__item
+                                ul.catalog__sublist
+                                    li.catalog__sublist-item
+                                        a.catalog__sublist-link.interactive(href='#') Фитнес-браслеты
+                                    li.catalog__sublist-item
+                                        a.catalog__sublist-link.interactive(href='#') Умные часы
+                            li.catalog__item
+                                ul.catalog__sublist
+                                    li.catalog__sublist-item
+                                        a.catalog__sublist-link.interactive(href='#') Квадрокоптеры
+                    li.navigation__item
+                        a.navigation__link.interactive(href='#') Доставка
+                    li.navigation__item
+                        a.navigation__link.interactive(href='#') Гарантия
+                    li.navigation__item
+                        a.navigation__link.interactive(href='#') Контакты
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

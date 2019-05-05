@@ -1,0 +1,36 @@
+.navigation-list {
+  display: flex;
+  padding: 15px 72px 15px;
+
+  &__item {
+    margin-right: 147px;
+
+    &:nth-child(2) {
+      margin-right: auto;
+    }
+
+    &:nth-child(3) {
+      margin-right: 165px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      color: $brown-active-text;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &[href]:hover, &[href]:focus {
+      color: $blue-text;
+    }
+
+    &[href]:active {
+      color: $brown-text;
+    }
+  }
+}

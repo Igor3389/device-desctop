@@ -1,0 +1,210 @@
+extends layouts/page
+include mixins/mixins
+block variables
+    - var title= 'Device | Главная'
+    - var mainPage= true
+    - var activNavItem= ''
+    - var logout= true
+block pageContent
+    main.main(class=mainPage ? 'main-page' : 'inner-page')
+        .container
+            h1.visually-hidden Device
+            ul.slider
+                li.slider__item
+                    .slider__content
+                        p.slider__image-container.slider__image-container--1
+                            +img({
+                                class: 'slider__image',
+                                src: 'img/slider-1.png',
+                                path: 'img/',
+                                name: 'slider-1',
+                                format: '.png',
+                                alt: 'Селфи палка',
+                                retina: ['2x', '3x']
+                                })
+                        .slider__description
+                            span.slider__number 01
+                            b.slider__slogan Делай селфи,  как Бен Стиллер!
+                            p.slider__text Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
+                            a.slider__link.button Подробнее
+                            ul.slider__description-list
+                                li.slider__description-item
+                                    p.slider__description-value 8,5 м
+                                    p.slider__description-option Длина палки
+                                li.slider__description-item
+                                    p.slider__description-value 5 кг
+                                    p.slider__description-option Вес палки
+                                li.slider__description-item
+                                    p.slider__description-value Карбон
+                                    p.slider__description-option Материал
+                li.slider__item
+                    .slider__content
+                        p.slider__image-container.slider__image-container--2
+                            +img({
+                                class: 'slider__image',
+                                src: 'img/slider-2.png',
+                                path: 'img/',
+                                name: 'slider-2',
+                                format: '.png',
+                                alt: 'фитнес-браслет',
+                                retina: ['2x', '3x']
+                            })
+                        .slider__description
+                            span.slider__number 02
+                            b.slider__slogan Худеем правильно!
+                            p.slider__text Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.a.slider__link.button Подробнее
+                            a.slider__link.button Подробнее
+                            ul.slider__description-list
+                                li.slider__description-item
+                                    p.slider__description-value 48 часов
+                                    p.slider__description-option Без подзарядки
+                li.slider__item
+                    .slider__content
+                        p.slider__image-container.slider__image-container--3
+                            +img({
+                                class: 'slider__image',
+                                src: 'img/slider-3.png',
+                                path: 'img/',
+                                name: 'slider-3',
+                                format: '.png',
+                                alt: 'квадрокоптер',
+                                retina: ['2x', '3x']
+                            })
+                        .slider__description
+                            span.slider__number 03
+                            b.slider__slogan Порхает как бабочка, жалит как пчела!
+                            p.slider__text Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
+                            a.slider__link.button Подробнее
+                            ul.slider__description-list
+                                li.slider__description-item
+                                    p.slider__description-value 800 м
+                                    p.slider__description-option Дальность полета
+                                li.slider__description-item
+                                    p.slider__description-value 50 м
+                                    p.slider__description-option Радиус поражения
+            section.categories
+                h2.visually-hidden Категории товаров
+                ul.categories__list
+                    li.categories__item
+                        a.categories__link(href='#')
+                            .categories__image
+                                +icon('categories__icon categories__icon--1', 'popular-1', 97, 55, {ariaLabelledby : 'heading1'})
+                                    title#heading1 Виртуальная реальность
+                            h3.categories__subtitle Виртуальная реальность
+                    li.categories__item
+                        a.categories__link(href='#')
+                            .categories__image
+                                +icon('categories__icon categories__icon--2', 'popular-2', 86, 117, {ariaLabelledby : 'heading2'})
+                                    title#heading2 Моноподы для селфи
+                            h3.categories__subtitle Моноподы для селфи
+                    li.categories__item
+                        a.categories__link(href='#')
+                            .categories__image
+                                +icon('categories__icon categories__icon--3', 'popular-3', 71, 87, {ariaLabelledby : 'heading3'})
+                                    title#heading3 Экшн-камеры
+                            h3.categories__subtitle Экшн-камеры
+                    li.categories__item
+                        a.categories__link(href='#')
+                            .categories__image
+                                +icon('categories__icon categories__icon--4', 'popular-4', 107, 65, {ariaLabelledby : 'heading4'})
+                                    title#heading4 Фитнес-браслеты
+                            h3.categories__subtitle Фитнес-браслеты
+                    li.categories__item
+                        a.categories__link(href='#')
+                            .categories__image
+                                +icon('categories__icon categories__icon--5', 'popular-5', 56, 98, {ariaLabelledby : 'heading5'})
+                                    title#heading5 Умные часы
+                            h3.categories__subtitle Умные часы
+                    li.categories__item
+                        a.categories__link(href='#')
+                            .categories__image
+                                +icon('categories__icon categories__icon--6', 'popular-6', 132, 69, {ariaLabelledby : 'heading6'})
+                                    title#heading6 Квадрокоптеры
+                            h3.categories__subtitle Квадрокоптеры
+        section.features
+            h2.visually-hidden Преимущества DEVICE
+            .container
+                ul.features__list
+                    li.features__item.features__item--active
+                        p.features__name.button Доставка
+                        section.features__block.features__block--delivery
+                            h3.features__block-title Доставка
+                            p.features__block-text Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
+                    li.features__item
+                        p.features__name.button Гарантия
+                        section.features__block.features__block--warranty
+                            h3.features__block-title Гарантия
+                            p.features__block-text Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.
+                    li.features__item
+                        p.features__name.button Кредит
+                        section.features__block.features__block--credit
+                            h3.features__block-title Кредит
+                            p.features__block-text Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.
+        .container
+            section.brands
+                h2.visually-hidden Бренды
+                ul.brands__list
+                    li.brands__item
+                        a.brands__link(href='#')
+                            +img({
+                                class: 'brands__image',
+                                src: 'img/logo-1.jpg',
+                                path: 'img/',
+                                name: 'logo-1',
+                                alt: 'logo-1',
+                                retina: ['2x', '3x']
+                            })
+                    li.brands__item
+                        a.brands__link(href='#')
+                            +img({
+                                class: 'brands__image',
+                                src: 'img/logo-2.jpg',
+                                path: 'img/',
+                                name: 'logo-2',
+                                alt: 'logo-2',
+                                retina: ['2x', '3x']
+                            })
+                    li.brands__item
+                        a.brands__link(href='#')
+                            +img({
+                                class: 'brands__image',
+                                src: 'img/logo-3.jpg',
+                                path: 'img/',
+                                name: 'logo-3',
+                                alt: 'logo-3',
+                                retina: ['2x', '3x']
+                            })
+                    li.brands__item
+                        a.brands__link(href='#')
+                            +img({
+                                class: 'brands__image',
+                                src: 'img/logo-4.jpg',
+                                path: 'img/',
+                                name: 'logo-4',
+                                alt: 'logo-4',
+                                retina: ['2x', '3x']
+                            })
+            .main-page__bottom
+                section.about
+                    h2.about__title О нас
+                    p.about__text Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.
+                    p.about__text Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:
+                    ul.about__list
+                        li.about__item Деловые Линии
+                        li.about__item Автотрейдинг
+                        li.about__item ЖелДорЭкспедиция
+                    a.about__link.button Подробнее о нас
+                section.contacts
+                    h2.contacts__title Контакты
+                    p.contacts__text Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
+                    a.contacts__map-link(href='#')
+                        +img({
+                            class: 'contacts__image',
+                            src: 'img/map-small.jpg',
+                            path: 'img/',
+                            name: 'map-small',
+                            alt: 'Миниатюра карты',
+                            retina: ['2x', '3x']
+                        })
+                    a.contacts__link.button Напишите нам
+

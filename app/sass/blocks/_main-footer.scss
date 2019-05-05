@@ -1,0 +1,88 @@
+.main-footer {
+  padding-top: 60px;
+  padding-bottom: 58px;
+
+  color: $white;
+  background-color: $footer-background;
+
+  &__top {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__middle {
+    display: flex;
+    margin-bottom: 59px;
+  }
+
+  &__bottom {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+
+      width: 80px;
+      height: 7px;
+      background-color: $acient;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__login {
+    padding-top: 3px;
+    margin-right: 36px;
+  }
+
+  &__compare {
+    padding-top: 3px;
+    margin-right: 36px;
+  }
+
+  &__cart {
+    padding-top: 3px;
+  }
+
+  &__navigation {
+    display: flex;
+    margin-right: auto;
+
+    &-item {
+      margin-right: 35px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link {
+      @include gilroy(18px, 24px);
+      text-transform: uppercase;
+      letter-spacing: 3.4px;
+    }
+  }
+
+  &__address {
+    margin-right: 166px;
+    margin-top: -3px;
+  }
+
+  &__phone {
+    margin-top: -3px;
+  }
+
+  &__author-icon {
+    fill: $acient;
+  }
+}
+
+.page-inner .main-footer {
+  margin-top: 3px;
+}

@@ -1,0 +1,173 @@
+extends layouts/page
+include mixins/mixins
+block variables
+    - var title= 'device | Магазин'
+    - var mainPage= false
+    - var catalogPage= true
+    - var activNavItem= 'МАГАЗИН'
+    - var logout= false
+block pageContent
+    main.main(class=mainPage ? 'main-page' : 'inner-page', role='main')
+        .container
+            header.inner-page__header
+                h1.inner-page__title Моноподы для селфи
+                ul.inner-page__list
+                    li.inner-page__item
+                        a.inner-page__link(href='#') Главная
+                    li.inner-page__item
+                        a.inner-page__link(href='#') Каталог товаров
+                    li.inner-page__item
+                        a.inner-page__link Моноподы для селфи
+        .products
+            section.products__form
+                header.products__form-title
+                    .products__form-wrapper
+                        h2.products__title Фильтр:
+                form.products__form-content.form(action='#', method='post')
+                    .products__form-wrapper
+                        fieldset.form__section.range
+                            legend.form__title.range__title Стоимость
+                            .range__box
+                                .range__line
+                                    .range__scale
+                                    span.range__indicator.range__indicator--left
+                                    span.range__indicator.range__indicator--right
+                            .range__bottom
+                                label.range__label
+                                    span.range__text От
+                                    input.range__field(type='text', name='minRange', value='0')
+                                label.range__label
+                                    span.range__text До
+                                    input.range__field(type='text', name='maxRange', value='5000')
+                        fieldset.form__section.color
+                            legend.form__title.color__title Цвет
+                            ul.color__list
+                                li.color__item
+                                    label.checkbox
+                                        input.checkbox__field(type='checkbox', name='black', checked)
+                                        span.checkbox__indicator
+                                        span.checkbox__text Чёрный
+                                li.color__item
+                                    label.checkbox
+                                        input.checkbox__field(type='checkbox', name='white')
+                                        span.checkbox__indicator
+                                        span.checkbox__text Белый
+                                li.color__item
+                                    label.checkbox
+                                        input.checkbox__field(type='checkbox', name='blue', checked)
+                                        span.checkbox__indicator
+                                        span.checkbox__text Синий
+                                li.color__item
+                                    label.checkbox
+                                        input.checkbox__field(type='checkbox', name='red', checked)
+                                        span.checkbox__indicator
+                                        span.checkbox__text Красный
+                                li.color__item
+                                    label.checkbox
+                                        input.checkbox__field(type='checkbox', name='pink')
+                                        span.checkbox__indicator
+                                        span.checkbox__text Розовый
+                        fieldset.form__section.bluetooth
+                            legend.form__title.bluetooth__title Bluetooth
+                            ul.bluetooth__list
+                                li.bluetooth__item
+                                    label.radio
+                                        input.radio__field(type='radio', name='bluetooth', checked)
+                                        span.radio__indicator
+                                        span.radio__text Есть
+                                li.bluetooth__item
+                                    label.radio
+                                        input.radio__field(type='radio', name='bluetooth')
+                                        span.radio__indicator
+                                        span.radio__text Нет
+                        button.form__button.button Показать
+            section.products__sort.sort
+                header.products__sort-title
+                    .products__sort-wrapper
+                        .products__sort-block
+                            h2.products__title.sort__title Сортировка:
+                            .sort__list
+                                a.sort__item.sort__item--active По цене
+                                a.sort__item(href='#') По типу
+                                a.sort__item(href='#') По популярности
+                            .sort__rank
+                                a.sort__rank-item--up(href='#', aria-label='По возрастанию')
+                                a.sort__rank-item--down.sort__rank-item--active(aria-label='По убыванию')
+                .products__content
+                    .products__sort-wrapper
+                        ul.products__list
+                            li.products__item.product
+                                .product__image
+                                    +img({
+                                        class: 'product__img',
+                                        src: 'img/item-1.jpg',
+                                        path: 'img/',
+                                        name: 'item-1',
+                                        alt: 'Любительская селфи-палка',
+                                        retina: ['2x', '3x']
+                                    })
+                                    .product__overlay
+                                        a.product__link-cart.button(href='#') В корзину
+                                        a.product__link-compare(href='#') Добавить к сравнению
+                                .product__info
+                                    h3.product__title Любительская селфи-палка
+                                    span.product__price 500 руб.
+                            li.products__item.product
+                                .product__image
+                                    +img({
+                                        class: 'product__img',
+                                        src: 'img/item-2.jpg',
+                                        path: 'img/',
+                                        name: 'item-2',
+                                        alt: 'Профессиональная селфи-палка',
+                                        retina: ['2x', '3x']
+                                    })
+                                    .product__overlay
+                                        a.product__link-cart.button(href='#') В корзину
+                                        a.product__link-compare(href='#') Добавить к сравнению
+                                .product__info
+                                    h3.product__title Профессиональная селфи-палка
+                                    span.product__price 1 500 руб.
+                            li.products__item.product
+                                .product__image
+                                    +img({
+                                        class: 'product__img',
+                                        src: 'img/item-3.jpg',
+                                        path: 'img/',
+                                        name: 'item-3',
+                                        alt: 'Непотопляемая селфи-палка',
+                                        retina: ['2x', '3x']
+                                    })
+                                    .product__overlay
+                                        a.product__link-cart.button(href='#') В корзину
+                                        a.product__link-compare(href='#') Добавить к сравнению
+                                .product__info
+                                    h3.product__title Непотопляемая селфи-палка
+                                    span.product__price 2 500 руб.
+                            li.products__item.product
+                                .product__image
+                                    +img({
+                                        class: 'product__img',
+                                        src: 'img/item-4.jpg',
+                                        path: 'img/',
+                                        name: 'item-4',
+                                        alt: 'Селфи-палка «Следуй за мной»',
+                                        retina: ['2x', '3x']
+                                    })
+                                    span.product__new NEW
+                                    .product__overlay
+                                        a.product__link-cart.button(href='#') В корзину
+                                        a.product__link-compare(href='#') Добавить к сравнению
+                                .product__info
+                                    h3.product__title Селфи-палка «Следуй за мной»
+                                    span.product__price 4 900 руб.
+                        .products__pages.pages
+                            a.pages__button(href='#') Назад
+                            ul.pages__list
+                                li.pages__item.pages__item--active
+                                    a.pages__link 1
+                                li.pages__item
+                                    a.pages__link(href='#') 2
+                                li.pages__item
+                                    a.pages__link(href='#') 3
+                            a.pages__button.pages__button--disabled Вперед

@@ -1,0 +1,12 @@
+.logo {
+  display: block;
+
+  font-size: 48px;
+  line-height: 48px;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 900;
+
+  &--footer {
+    color: $acient;
+  }
+}

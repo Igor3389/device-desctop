@@ -1,0 +1,22 @@
+.navigation {
+
+  &__list {
+    display: flex;
+  }
+
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 3.4px;
+  text-transform: uppercase;
+
+  &__item {
+    margin-right: 34px;
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}

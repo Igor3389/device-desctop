@@ -1,0 +1,17 @@
+.cart {
+  position: relative;
+  padding-left: 27px;
+
+  &__icon {
+    position: absolute;
+    top: 9px;
+    left: 7px;
+  }
+
+  &--footer {
+    & .cart__icon {
+      top: 11px;
+      fill: $acient;
+    }
+  }
+}

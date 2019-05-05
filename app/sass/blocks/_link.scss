@@ -1,0 +1,23 @@
+.link {
+  color: $white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  line-height: 4px;
+  & span {
+    line-height: 13px;
+  }
+
+  &:hover {
+    color: $link-hover;
+    border-bottom: 1px solid rgba(255, 188, 158, 0.3);
+  }
+
+  &--background {
+    color: $black-text-color;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.3);
+
+    &:hover {
+      color: $link-background-hover;
+      border-bottom: 1px solid rgba(232, 77, 55, 0.3);
+    }
+  }
+}

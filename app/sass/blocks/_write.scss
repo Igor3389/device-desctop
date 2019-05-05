@@ -1,0 +1,55 @@
+.write {
+  padding: 92px 100px 90px;
+  width: 960px;
+
+  background-color: $white;
+
+  &__form-top {
+    display: flex;
+    margin-bottom: 34px;
+  }
+
+  &__label-top {
+    width: 360px;
+
+    &:first-child {
+      margin-right: auto;
+    }
+  }
+
+  &__label-text {
+    display: block;
+    margin-bottom: 7px;
+
+    @include gilroy(18px, 24px);
+  }
+
+  &__field {
+    padding: 8px 20px 11px;
+    width: 100%;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 15px;
+    line-height: 30px;
+    color: $text-color;
+
+    ::placeholder {
+      font-size: 15px;
+      line-height: 30px;
+      color: $text-color;
+    }
+  }
+
+  &__text {
+    height: 156px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  &__button {
+    width: 200px;
+  }
+}

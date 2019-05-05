@@ -1,0 +1,82 @@
+.product {
+  &__image {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  &__overlay {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 98%;
+  }
+
+  &:hover {
+    & .product__img {
+      opacity: 0.5;
+    }
+
+    & .product__overlay {
+      display: flex;
+    }
+  }
+
+  &__new {
+    position: absolute;
+    top: 29px;
+    right: 28px;
+    display: block;
+    width: 60px;
+    height: 60px;
+
+    @include gilroy(14px, 60px);
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+
+  }
+
+  &__info {
+    display: flex;
+    padding-right: 2px;
+  }
+
+  &__title {
+    margin-right: auto;
+    @include gilroy(18px, 24px);
+    width: 260px;
+  }
+
+  &__price {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: $text-color;
+  }
+
+  &__link-cart {
+    width: 200px;
+  }
+
+  &__link-compare {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    line-height: 36px;
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}

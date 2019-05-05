@@ -1,0 +1,36 @@
+.social {
+  width: 375px;
+
+  &__list {
+    display: flex;
+    margin-right: 484px;
+  }
+
+  &__item {
+    margin-left: 22px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    user-select: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    opacity: 0.3;
+
+    &:hover, &:focus {
+      opacity: 1;
+    }
+    &:active {
+      opacity: 0.1;
+    }
+  }
+
+  &__icon {
+    margin: auto;
+    fill: $white;
+  }
+}

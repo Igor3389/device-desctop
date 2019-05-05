@@ -1,0 +1,40 @@
+.main-header {
+  padding-top: 40px;
+
+  &__wrapper {
+    position: relative;
+    padding: 34px 60px 163px;
+    background-color: $header-background;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 59px;
+    top: -24px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  &__search {
+    margin-right: 98px;
+  }
+
+  &__login {
+    margin-right: auto;
+  }
+
+  &__cart {
+    margin-left: 34px;
+  }
+}
+
+.page-inner .main-header__wrapper {
+  padding-bottom: 49px;
+}

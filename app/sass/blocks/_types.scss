@@ -1,0 +1,20 @@
+.types {
+  margin-right: 121px;
+
+  &__title {
+    display: block;
+    margin-bottom: 25px;
+
+    border: none;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  &__item {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

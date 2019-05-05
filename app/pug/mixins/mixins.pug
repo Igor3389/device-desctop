@@ -1,0 +1,82 @@
+//- +navList('menu-list', 'item', 'link', 'ИНФОРМАЦИЯ', [{title: 'ИНФОРМАЦИЯ', link: 'information'}, {title: 'НОВОСТИ', link: 'news'},{title: 'ПРАЙС-ЛИСТ', link: 'price'},{title: 'МАГАЗИН', link: 'shop'},{title: 'КОНТАКТЫ'}])
+
+mixin navList(listClass, itemClass, linkClass, activeElement, items)
+    ul(class= listClass)
+        each item in items
+            if (activeElement === item.title)
+                li(class=listClass + "__" + itemClass + " " + listClass + "__" + itemClass + '--active')
+                    a(class=listClass + "__" + linkClass)= item.title
+            else if item.link
+                li(class=listClass + "__" + itemClass)
+                    a(class=listClass + "__" + linkClass, href=item.link + ".html")= item.title
+            else
+                li(class=listClass + "__" + itemClass)
+                    a(class=listClass + "__" + linkClass, href="#")= item.title
+
+
+//- +icon('some_icon', 'home', 30, 24, {ariaLabelledby : 'heading desc'})
+//-     title#heading title
+//-     desc#desc desc
+//- +icon('some_icon', 'home', 30, 24, {role: 'img'})
+//-     title mtero
+//- +icon('some_icon', 'home', 30, 24, {ariaHidden: 'true', role: 'presentation'})
+
+
+mixin icon(className, id, width, height, attrs)
+    if(!attrs)
+        svg(class=className, width=width, height=height)
+            block
+            use(xlink:href= "img/svg/symbol/sprite.svg#" + id)
+    else
+        svg(class=className, width=width, height=height, aria-labelledby=attrs.ariaLabelledby, role=attrs.role, aria-hidden=attrs.ariaHidden)
+            block
+            use(xlink:href= "img/svg/symbol/sprite.svg#" + id)
+
+
+//- +socialList('social', 'item', 'link', [
+//-    {link: '#', title: 'Мы в фейсбуке', id: 'fb', width: 32, height: 32},
+//-    {link: '#', title: 'Мы в Инстаграмме', id: 'inst', width: 32, height: 32},
+//-    {link: '#', title: 'Мы в Твитере', id: 'tw', width: 32, height: 32}])
+mixin socialList(listClass, itemClass, linkClass, items)
+    ul(class=listClass + '__list')
+        each item in items
+            li(class=listClass + "__" + itemClass)
+                a(class=listClass + "__" + linkClass, href=item.link, aria-label=item.title)
+                    +icon(listClass + '__icon', item.id, item.width, item.height, {role: 'img'})
+//- +img({
+//-     class: 'className',
+//-     src: 'img/map-small.jpg',
+//-     path: 'img/',
+//-     name: 'map-small',
+//-     alt: 'alt',
+//-     retina: ['2x', '3x'],
+//-     breaks: [{w: 300, p: '-sm'}, {w: 600, p: '-md'}]
+//- })
+mixin img(file)
+    if (file.retina || file.breaks)
+        - var format= file.format ? file.format : '.jpg'
+        - var ret= '';
+        - var retwebp= file.path + file.name + '.webp 1x';
+        picture
+            if file.breaks
+                each itemB in file.breaks
+                    - var brRet= file.path + file.name + itemB.p + format + ' 1x';
+                    - var brRetwebp= file.path + file.name + itemB.p + '.webp 1x';
+                    if file.retina
+                        each itemR in file.retina
+                            - brRet= brRet + ', ' + file.path + file.name + itemB.p + '@' + itemR + format + ' ' + itemR
+                            - brRetwebp= brRetwebp + ', ' + file.path + file.name + itemB.p + '@' + itemR + '.webp' + ' ' + itemR
+                    source(type='image/webp', media= "(max-width: " + itemB.w + "px)", srcset=brRetwebp)
+                    source(media= "(max-width: " + itemB.w + "px)", srcset=brRet)
+            if file.retina
+                each item in file.retina
+                    - ret= ret + file.path + file.name + '@' + item + format + ' ' + item + ', '
+                    - retwebp= retwebp + ', ' + file.path + file.name + '@' + item + '.webp' + ' ' + item
+                - ret= ret.substr(0, ret.length - 2)
+                source(type='image/webp', srcset=retwebp)
+                img(class=file.class, src=file.path + file.name + format, srcset=ret, alt=file.alt ? file.alt : file.name)
+    else
+        picture
+            source(type='image/webp', srcset=file.path + file.name + '.webp' + ' 1x')
+            img(class=file.class, src=file.src, alt=file.alt ? file.alt : file.name)
+

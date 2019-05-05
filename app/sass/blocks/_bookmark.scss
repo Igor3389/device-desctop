@@ -1,0 +1,40 @@
+.bookmark {
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 42px;
+  padding: 12px 17px 10px 33px;
+
+  font-size: 17px;
+  line-height: 18px;
+  text-align: center;
+  color: white;
+
+  background-color: $acient-blue-border;
+
+  &:hover, &:focus {
+    outline: none;
+    background-color: $acient-blue-hover;
+
+    & .bookmark__icon {
+      fill: $white;
+    }
+  }
+
+  &:active {
+    outline: none;
+    background-color: $acient-blue-active;
+    color: rgba(255, 255, 255, 0.5);
+
+    & .bookmark__icon {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 12px;
+    left: 17px;
+    fill: rgba(255, 255, 255, 0.3);
+  }
+}

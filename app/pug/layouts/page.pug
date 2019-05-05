@@ -1,0 +1,10 @@
+block variables
+include ../modules/head.pug
+body(class=mainPage ? 'page' : 'page-inner')
+    include ../modules/header.pug
+
+    block pageContent
+
+    include ../modules/footer.pug
+    include ../modules/modals.pug
+    include ../modules/scripts.pug

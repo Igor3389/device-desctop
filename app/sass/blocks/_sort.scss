@@ -1,0 +1,85 @@
+.sort {
+  &__title {
+    margin-right: 44px;
+  }
+
+  &__list {
+    margin-right: auto;
+    padding-top: 18px;
+
+    font-weight: 400;
+  }
+
+  &__item {
+    margin-right: 26px;
+    color: rgba(0, 0, 0, 0.3);
+
+    &--active {
+      color: $black;
+    }
+
+    &[href]:hover, &[href]:focus {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &[href]:active {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+
+  &__rank {
+    position: relative;
+    margin-top: 30px;
+    width: 41px;
+
+    &-item {
+      &--up {
+        position: absolute;
+        top: 0;
+        left: -2px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 6px 10px 6px;
+        border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+
+        &.sort__rank-item--active {
+          border-color: transparent transparent $black transparent;
+        }
+
+        &[href]:hover {
+          border-color: transparent transparent rgba(0, 0, 0, 0.6) transparent;
+        }
+
+        &[href]:active {
+          border-color: transparent transparent $black transparent;
+        }
+      }
+
+      &--down {
+        position: absolute;
+        top: 0;
+        right: 2px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 6px 0 6px;
+        border-color: rgba(0, 0, 0, 0.3) transparent transparent transparent;
+
+        &.sort__rank-item--active {
+          border-color: $black transparent transparent transparent;
+        }
+
+        &[href]:hover {
+          border-color: rgba(0, 0, 0, 0.6) transparent transparent transparent;
+        }
+
+        &[href]:active {
+          border-color: $black transparent transparent transparent;
+        }
+      }
+    }
+  }
+}

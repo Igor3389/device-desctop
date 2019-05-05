@@ -1,0 +1,15 @@
+.manufacturies {
+  margin-bottom: 17px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #e5e5e5;
+
+  &__title {
+    margin-bottom: 14px;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}

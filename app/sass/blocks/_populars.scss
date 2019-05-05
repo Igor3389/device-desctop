@@ -1,0 +1,19 @@
+.populars {
+  margin-bottom: 21px;
+
+  &__header {
+    margin-bottom: 21px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

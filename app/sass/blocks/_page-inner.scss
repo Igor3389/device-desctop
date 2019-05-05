@@ -1,0 +1,10 @@
+.page-inner {
+  & .main-footer {
+    padding-top: 0;
+    background-image: none;
+
+    &__bottom {
+      background-color: $white;
+    }
+  }
+}
